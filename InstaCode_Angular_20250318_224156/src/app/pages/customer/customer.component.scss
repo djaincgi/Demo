@@ -1,0 +1,224 @@
+@use '@angular/material' as mat;
+
+.customer-setup-container {
+  position: relative;
+  padding: 20px;
+  font-family: 'Noto Sans', sans-serif;
+  background: rgba(245, 245, 245, 1.0);
+  min-height: 100vh;
+  
+  .breadcrumb {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    
+    .home-icon {
+      width: 31px;
+      height: 16px;
+      background-color: rgba(39, 80, 155, 1.0);
+      border-radius: 3px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
+      mat-icon {
+        color: white;
+        font-size: 16px;
+        height: 16px;
+        width: 16px;
+        line-height: 16px;
+      }
+    }
+    
+    .breadcrumb-item {
+      font-size: 14px;
+      margin: 0 5px;
+      
+      &.active {
+        color: rgba(39, 80, 155, 1.0);
+        font-weight: 700;
+      }
+    }
+    
+    .breadcrumb-arrow {
+      color: rgba(39, 80, 155, 1.0);
+      font-size: 14px;
+      height: 14px;
+      width: 14px;
+    }
+  }
+  
+  .page-title {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+  
+  .tabs-container {
+    display: flex;
+    margin-bottom: 10px;
+    
+    .tab {
+      height: 26px;
+      padding: 0 24px;
+      font-size: 14px;
+      font-weight: 400;
+      border-radius: 10px 10px 0 0;
+      line-height: 26px;
+      
+      &.active {
+        background-color: rgba(212, 231, 250, 1.0);
+      }
+    }
+  }
+  
+  .content-card {
+    padding: 20px;
+    margin-bottom: 20px;
+    
+    .section-title {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+    
+    .section {
+      margin: 20px 0;
+      
+      .section-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+        
+        mat-icon {
+          margin-right: 10px;
+        }
+        
+        h3 {
+          font-size: 18px;
+          font-weight: 700;
+          margin: 0;
+        }
+      }
+    }
+    
+    mat-divider {
+      margin: 20px 0;
+    }
+    
+    .form-container {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      
+      .form-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        
+        &.toggle-row {
+          margin-top: 10px;
+        }
+      }
+      
+      .form-field {
+        flex: 1;
+        min-width: 300px;
+        
+        mat-form-field {
+          width: 100%;
+        }
+      }
+      
+      .toggle-field {
+        display: flex;
+        align-items: center;
+        margin-right: 30px;
+        
+        .field-label {
+          margin-right: 10px;
+        }
+      }
+    }
+    
+    .field-label {
+      display: block;
+      font-size: 14px;
+      margin-bottom: 5px;
+      
+      .required {
+        color: rgba(183, 28, 28, 1.0);
+        margin-left: 2px;
+      }
+    }
+    
+    .footer {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 40px;
+      font-size: 14px;
+    }
+  }
+  
+  .save-button {
+    position: absolute;
+    top: 28px;
+    right: 20px;
+    background-color: rgba(39, 80, 155, 1.0);
+    color: white;
+    border-radius: 7px;
+    padding: 0 20px 0 50px;
+    height: 48px;
+    font-size: 16px;
+    font-weight: 500;
+    
+    mat-icon {
+      position: absolute;
+      left: 29px;
+      top: 16px;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .customer-setup-container {
+    padding: 10px;
+    
+    .content-card {
+      padding: 15px;
+      
+      .form-container {
+        .form-row {
+          flex-direction: column;
+          gap: 10px;
+          
+          .form-field {
+            width: 100%;
+            min-width: auto;
+          }
+        }
+      }
+    }
+    
+    .save-button {
+      position: relative;
+      top: 0;
+      right: 0;
+      width: 100%;
+      margin-top: 20px;
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .customer-setup-container {
+    .content-card {
+      .footer {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
+    }
+  }
+}

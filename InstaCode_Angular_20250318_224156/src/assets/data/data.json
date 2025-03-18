@@ -1,0 +1,12 @@
+{
+  "Customer_Please_select_type": [
+    {
+      "name": "type2",
+      "id": 0
+    },
+    {
+      "name": "type1",
+      "id": 1
+    }
+  ]
+}

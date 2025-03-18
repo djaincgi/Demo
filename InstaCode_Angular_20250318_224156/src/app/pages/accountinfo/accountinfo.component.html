@@ -1,0 +1,167 @@
+<div class="account-info-container">
+  <div class="breadcrumb">
+    <a mat-button class="home-button">
+      <mat-icon>home</mat-icon>
+    </a>
+    <a mat-button>Customer</a>
+    <mat-icon>chevron_right</mat-icon>
+    <a mat-button class="active">Customer Setup</a>
+  </div>
+  
+  <h1 class="page-title">Customer Setup</h1>
+  
+  <div class="tabs-container">
+    <a mat-button>Information</a>
+    <a mat-button>CAM Specs</a>
+    <a mat-button>Settings</a>
+    <a mat-button class="active-tab">National Account Info</a>
+    <a mat-button>Associate Dealer Customers</a>
+  </div>
+  
+  <mat-card class="content-card">
+    <h2 class="section-title">National Account info</h2>
+    
+    <div class="toggle-section">
+      <div class="field-label">Is National Account <span class="required">*</span></div>
+      <mat-slide-toggle color="primary"></mat-slide-toggle>
+    </div>
+    
+    <div class="button-group">
+      <button mat-raised-button color="accent" class="view-fleets-button">
+        <mat-icon>visibility</mat-icon>
+        View Fleets
+      </button>
+      
+      <button mat-raised-button color="primary" class="edit-button">
+        <mat-icon>settings</mat-icon>
+        Edit Selection
+      </button>
+      
+      <button mat-raised-button color="primary" class="save-button">
+        <mat-icon>save</mat-icon>
+        Save
+      </button>
+    </div>
+    
+    <div class="section-container">
+      <h3 class="subsection-title">
+        <mat-icon>folder</mat-icon>
+        Fleet Information
+      </h3>
+      
+      <mat-divider></mat-divider>
+      
+      <div class="form-container">
+        <div class="form-row">
+          <div class="form-field">
+            <div class="field-label">Fleet <span class="required">*</span></div>
+            <mat-form-field appearance="outline">
+              <input matInput placeholder="Please enter fleet here">
+            </mat-form-field>
+          </div>
+          
+          <div class="form-field">
+            <div class="field-label">Fleet Name</div>
+            <mat-form-field appearance="outline">
+              <input matInput placeholder="Please enter fleet name here">
+            </mat-form-field>
+          </div>
+          
+          <div class="form-field">
+            <div class="field-label">Address</div>
+            <mat-form-field appearance="outline">
+              <input matInput placeholder="Please enter address here">
+            </mat-form-field>
+          </div>
+          
+          <div class="form-field">
+            <div class="field-label">City</div>
+            <mat-form-field appearance="outline">
+              <input matInput placeholder="Please enter city here">
+            </mat-form-field>
+          </div>
+        </div>
+        
+        <div class="form-row">
+          <div class="form-field">
+            <div class="field-label">State</div>
+            <mat-form-field appearance="outline">
+              <input matInput placeholder="Please enter state here">
+            </mat-form-field>
+          </div>
+          
+          <div class="form-field">
+            <div class="field-label">Ship-to-number</div>
+            <mat-form-field appearance="outline">
+              <input matInput placeholder="Please enter Ship-to-number here">
+            </mat-form-field>
+          </div>
+          
+          <div class="form-field">
+            <div class="field-label">Bill-to-number</div>
+            <mat-form-field appearance="outline">
+              <input matInput placeholder="Please enter Bill-to-number here">
+            </mat-form-field>
+          </div>
+          
+          <div class="form-field">
+            <div class="field-label">DBA Name</div>
+            <mat-form-field appearance="outline">
+              <input matInput placeholder="Please enter DBA Name here">
+            </mat-form-field>
+          </div>
+        </div>
+        
+        <div class="form-row">
+          <div class="form-field">
+            <div class="field-label">Home Office Number</div>
+            <mat-form-field appearance="outline">
+              <input matInput placeholder="Please enter home office no here">
+            </mat-form-field>
+          </div>
+          
+          <div class="form-field">
+            <div class="field-label">Fleet Home Office Name</div>
+            <mat-form-field appearance="outline">
+              <input matInput placeholder="Please enter fleet home office name here">
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="section-container">
+      <h3 class="subsection-title">
+        <mat-icon>folder</mat-icon>
+        Parent Company Information
+      </h3>
+      
+      <mat-divider></mat-divider>
+      
+      <div class="form-container">
+        <div class="form-row">
+          <div class="form-field">
+            <div class="field-label">Parent Company Number</div>
+            <mat-form-field appearance="outline">
+              <input matInput placeholder="Please enter parent company no here">
+            </mat-form-field>
+          </div>
+          
+          <div class="form-field">
+            <div class="field-label">Parent Company Name</div>
+            <mat-form-field appearance="outline">
+              <input matInput placeholder="Please enter parent company name here">
+            </mat-form-field>
+          </div>
+          
+          <div class="form-field">
+            <div class="field-label">Category</div>
+            <mat-form-field appearance="outline">
+              <input matInput placeholder="Please enter category here">
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+    </div>
+  </mat-card>
+</div>

@@ -1,0 +1,340 @@
+<!-- Main container for the customer setup page -->
+<div class="customer-setup-container">
+  <!-- Breadcrumb navigation section showing the current page location -->
+  <div class="breadcrumb">
+    <!-- Home icon container -->
+    <div class="home-icon">
+      <!-- Material icon for home -->
+      <mat-icon>home</mat-icon>
+    </div>
+    <!-- First breadcrumb item showing "Customer" -->
+    <span class="breadcrumb-item">Customer</span>
+    <!-- Right arrow icon for breadcrumb navigation -->
+    <mat-icon class="breadcrumb-arrow">chevron_right</mat-icon>
+    <!-- Current page breadcrumb item marked as active -->
+    <span class="breadcrumb-item active">Customer Setup</span>
+  </div>
+
+  <!-- Main page title -->
+  <h1 class="page-title">Customer Setup</h1>
+
+  <!-- Container for navigation tabs -->
+  <div class="tabs-container">
+    <!-- Information tab button marked as active -->
+    <button mat-button class="tab active">Information</button>
+    <!-- CAM Specs tab button -->
+    <button mat-button class="tab">CAM Specs</button>
+    <!-- Settings tab button -->
+    <button mat-button class="tab">Settings</button>
+  </div>
+
+  <!-- Material card component containing the main content -->
+  <mat-card class="content-card">
+    <!-- Form with Angular reactive form binding -->
+    <form [formGroup]="customerForm">
+      <!-- Section title for the Information section -->
+      <h2 class="section-title">Information</h2>
+      
+      <!-- Horizontal divider line -->
+      <mat-divider></mat-divider>
+      
+      <!-- Section for Generic Information -->
+      <div class="section">
+        <!-- Header for the Generic Information section -->
+        <div class="section-header">
+          <!-- Folder icon for the section -->
+          <mat-icon>folder</mat-icon>
+          <!-- Section heading -->
+          <h3>Generic Information</h3>
+        </div>
+
+        <!-- Container for form fields -->
+        <div class="form-container">
+          <!-- First row of form fields -->
+          <div class="form-row">
+            <!-- Customer code field container -->
+            <div class="form-field">
+              <!-- Label for customer code with required indicator -->
+              <label class="field-label">Customer code <span class="required">*</span></label>
+              <!-- Material form field with outline appearance -->
+              <mat-form-field appearance="outline">
+                <!-- Input field for customer code -->
+                <input matInput placeholder="Please enter customer code here">
+              </mat-form-field>
+            </div>
+
+            <!-- Customer Name field container -->
+            <div class="form-field">
+              <!-- Label for customer name with required indicator -->
+              <label class="field-label">Customer Name <span class="required">*</span></label>
+              <!-- Material form field with outline appearance -->
+              <mat-form-field appearance="outline">
+                <!-- Input field for customer name -->
+                <input matInput placeholder="Please enter customer name here">
+              </mat-form-field>
+            </div>
+
+            <!-- Type field container -->
+            <div class="form-field">
+              <!-- Label for type with required indicator -->
+              <label class="field-label">Type <span class="required">*</span></label>
+              <!-- Material form field with outline appearance -->
+              <mat-form-field appearance="outline">
+                <!-- Dropdown select for type bound to form control -->
+                <mat-select placeholder="Please select type" formControlName="type">
+                  <!-- Default empty option -->
+                  <mat-option [value]="">Please select type</mat-option>
+                  <!-- Dynamic options generated from type dropdown data -->
+                  <mat-option *ngFor="let option of getDropdownOptions('type')" [value]="option">
+                    {{ option }}
+                  </mat-option>
+                </mat-select>
+                <!-- Error message shown when type field is required but empty -->
+                <mat-error *ngIf="getFormControl('type').hasError('required')">Invalid Please select type</mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+
+          <!-- Row for toggle switches -->
+          <div class="form-row toggle-row">
+            <!-- Active toggle field container -->
+            <div class="toggle-field">
+              <!-- Label for active toggle with required indicator -->
+              <label class="field-label">Active <span class="required">*</span></label>
+              <!-- Material slide toggle with primary color -->
+              <mat-slide-toggle color="primary"></mat-slide-toggle>
+            </div>
+
+            <!-- BTM Flag toggle field container -->
+            <div class="toggle-field">
+              <!-- Label for BTM Flag toggle -->
+              <label class="field-label">BTM Flag</label>
+              <!-- Material slide toggle with primary color -->
+              <mat-slide-toggle color="primary"></mat-slide-toggle>
+            </div>
+
+            <!-- RFID Flag toggle field container -->
+            <div class="toggle-field">
+              <!-- Label for RFID Flag toggle -->
+              <label class="field-label">RFID Flag</label>
+              <!-- Material slide toggle with primary color -->
+              <mat-slide-toggle color="primary"></mat-slide-toggle>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Horizontal divider line -->
+      <mat-divider></mat-divider>
+
+      <!-- Section for Geographic Information -->
+      <div class="section">
+        <!-- Header for the Geographic Information section -->
+        <div class="section-header">
+          <!-- Folder icon for the section -->
+          <mat-icon>folder</mat-icon>
+          <!-- Section heading -->
+          <h3>Geographic Information</h3>
+        </div>
+
+        <!-- Container for form fields -->
+        <div class="form-container">
+          <!-- First row of address fields -->
+          <div class="form-row">
+            <!-- Address 1 field container -->
+            <div class="form-field">
+              <!-- Label for address 1 -->
+              <label class="field-label">Address 1</label>
+              <!-- Material form field with outline appearance -->
+              <mat-form-field appearance="outline">
+                <!-- Input field for address 1 -->
+                <input matInput placeholder="Please enter address 1 here">
+              </mat-form-field>
+            </div>
+
+            <!-- Address 2 field container -->
+            <div class="form-field">
+              <!-- Label for address 2 -->
+              <label class="field-label">Address 2</label>
+              <!-- Material form field with outline appearance -->
+              <mat-form-field appearance="outline">
+                <!-- Input field for address 2 -->
+                <input matInput placeholder="Please enter address 2 here">
+              </mat-form-field>
+            </div>
+
+            <!-- City field container -->
+            <div class="form-field">
+              <!-- Label for city -->
+              <label class="field-label">City</label>
+              <!-- Material form field with outline appearance -->
+              <mat-form-field appearance="outline">
+                <!-- Input field for city -->
+                <input matInput placeholder="Please enter city here">
+              </mat-form-field>
+            </div>
+
+            <!-- State/Province field container -->
+            <div class="form-field">
+              <!-- Label for state/province -->
+              <label class="field-label">State / Province</label>
+              <!-- Material form field with outline appearance -->
+              <mat-form-field appearance="outline">
+                <!-- Input field for state/province -->
+                <input matInput placeholder="Please enter state/province here">
+              </mat-form-field>
+            </div>
+          </div>
+
+          <!-- Second row of address fields -->
+          <div class="form-row">
+            <!-- Postal Code field container -->
+            <div class="form-field">
+              <!-- Label for postal code -->
+              <label class="field-label">Postal Code</label>
+              <!-- Material form field with outline appearance -->
+              <mat-form-field appearance="outline">
+                <!-- Input field for postal code -->
+                <input matInput placeholder="Please enter postal code">
+              </mat-form-field>
+            </div>
+
+            <!-- Country field container -->
+            <div class="form-field">
+              <!-- Label for country with required indicator -->
+              <label class="field-label">Country <span class="required">*</span></label>
+              <!-- Material form field with outline appearance -->
+              <mat-form-field appearance="outline">
+                <!-- Dropdown select for country -->
+                <mat-select placeholder="Please select your country">
+                  <!-- Default option -->
+                  <mat-option>Please select your country</mat-option>
+                  <!-- Static country options -->
+                  <mat-option value="option1">Option 1</mat-option>
+                  <mat-option value="option2">Option 2</mat-option>
+                  <mat-option value="option3">Option 3</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Horizontal divider line -->
+      <mat-divider></mat-divider>
+
+      <!-- Section for Sales & Contact Information -->
+      <div class="section">
+        <!-- Header for the Sales & Contact Information section -->
+        <div class="section-header">
+          <!-- Folder icon for the section -->
+          <mat-icon>folder</mat-icon>
+          <!-- Section heading -->
+          <h3>Sales & Contact Information</h3>
+        </div>
+
+        <!-- Container for form fields -->
+        <div class="form-container">
+          <!-- First row of contact fields -->
+          <div class="form-row">
+            <!-- Contact field container -->
+            <div class="form-field">
+              <!-- Label for contact -->
+              <label class="field-label">Contact</label>
+              <!-- Material form field with outline appearance -->
+              <mat-form-field appearance="outline">
+                <!-- Input field for contact -->
+                <input matInput placeholder="Please enter contact here">
+              </mat-form-field>
+            </div>
+
+            <!-- Email Address field container -->
+            <div class="form-field">
+              <!-- Label for email address -->
+              <label class="field-label">Email Address</label>
+              <!-- Material form field with outline appearance -->
+              <mat-form-field appearance="outline">
+                <!-- Input field for email -->
+                <input matInput placeholder="Please enter email here">
+              </mat-form-field>
+            </div>
+
+            <!-- Phone Number field container -->
+            <div class="form-field">
+              <!-- Label for phone number -->
+              <label class="field-label">Phone Number</label>
+              <!-- Material form field with outline appearance -->
+              <mat-form-field appearance="outline">
+                <!-- Input field for phone number -->
+                <input matInput placeholder="Please enter phone no here">
+              </mat-form-field>
+            </div>
+
+            <!-- Fax Number field container -->
+            <div class="form-field">
+              <!-- Label for fax number -->
+              <label class="field-label">Fax Number</label>
+              <!-- Material form field with outline appearance -->
+              <mat-form-field appearance="outline">
+                <!-- Input field for fax number -->
+                <input matInput placeholder="Please enter fax no here">
+              </mat-form-field>
+            </div>
+          </div>
+
+          <!-- Second row of ID fields -->
+          <div class="form-row">
+            <!-- Sales ID field container -->
+            <div class="form-field">
+              <!-- Label for sales ID -->
+              <label class="field-label">Sales Id</label>
+              <!-- Material form field with outline appearance -->
+              <mat-form-field appearance="outline">
+                <!-- Input field for sales ID -->
+                <input matInput placeholder="Please enter sales id here">
+              </mat-form-field>
+            </div>
+
+            <!-- Route ID field container -->
+            <div class="form-field">
+              <!-- Label for route ID -->
+              <label class="field-label">Route Id</label>
+              <!-- Material form field with outline appearance -->
+              <mat-form-field appearance="outline">
+                <!-- Input field for route ID -->
+                <input matInput placeholder="Please enter Route Id here">
+              </mat-form-field>
+            </div>
+
+            <!-- Enterprise ID field container -->
+            <div class="form-field">
+              <!-- Label for enterprise ID -->
+              <label class="field-label">Enterprise Id</label>
+              <!-- Material form field with outline appearance -->
+              <mat-form-field appearance="outline">
+                <!-- Input field for enterprise ID -->
+                <input matInput placeholder="Please enter enterprise id here">
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer section showing record timestamps -->
+      <div class="footer">
+        <!-- Last updated information -->
+        <span>Last updated: CCYY/MM/DD at 08:00 EST by BTN UserID</span>
+        <!-- Creation information -->
+        <span>Created: CCYY/MM/DD at 14:00 EST by BTNUserID</span>
+      </div>
+    </form>
+  </mat-card>
+
+  <!-- Save button with primary color and icon -->
+  <button mat-raised-button color="primary" class="save-button">
+    <!-- Save icon -->
+    <mat-icon>save</mat-icon>
+    <!-- Button text -->
+    Save
+  </button>
+</div>
