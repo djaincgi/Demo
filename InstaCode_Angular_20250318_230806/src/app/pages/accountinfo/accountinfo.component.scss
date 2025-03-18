@@ -1,0 +1,206 @@
+@use '@angular/material' as mat;
+
+.account-info {
+  font-family: 'Noto Sans', sans-serif;
+  background: rgba(245, 245, 245, 1.0);
+  min-height: 100vh;
+  
+  .midsection {
+    max-width: 1601px;
+    margin: 0 auto;
+    padding: 30px 20px;
+
+    .navigation {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+      
+      .group-6285 {
+        background-color: rgba(39, 80, 155, 1.0);
+        border-radius: 3px;
+        width: 31px;
+        height: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 15px;
+
+        mat-icon {
+          font-size: 16px;
+          width: 16px;
+          height: 16px;
+          color: white;
+        }
+      }
+
+      .breadcrumb {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        
+        span {
+          font-size: 14px;
+          
+          &.active {
+            color: rgba(39, 80, 155, 1.0);
+            font-weight: 700;
+          }
+        }
+
+        mat-icon {
+          color: rgba(39, 80, 155, 1.0);
+          font-size: 14px;
+          width: 14px;
+          height: 14px;
+        }
+      }
+    }
+
+    .page-title {
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 30px;
+    }
+
+    .tabs {
+      display: flex;
+      margin-bottom: 15px;
+      position: relative;
+
+      button {
+        font-size: 14px;
+        font-weight: 400;
+        color: rgba(0, 0, 0, 1.0);
+        padding: 0 12px;
+
+        &.active-tab {
+          background-color: rgba(212, 231, 250, 1.0);
+          border-radius: 10px 10px 0 0;
+          color: rgba(39, 80, 155, 1.0);
+        }
+      }
+    }
+
+    .content-card {
+      background-color: white;
+      border-radius: 4px;
+      padding: 20px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+      .section-title {
+        font-size: 32px;
+        font-weight: 700;
+        margin-bottom: 30px;
+      }
+
+      .form-actions {
+        display: flex;
+        justify-content: flex-end;
+        gap: 15px;
+        margin-bottom: 30px;
+
+        .view-fleets-btn {
+          background-color: rgba(252, 229, 0, 1.0);
+          color: black;
+        }
+
+        .edit-btn, .save-btn {
+          background-color: rgba(39, 80, 155, 1.0);
+          color: white;
+        }
+      }
+
+      .toggle-section {
+        display: flex;
+        align-items: center;
+        margin-bottom: 40px;
+        
+        .field-label {
+          margin-right: 5px;
+          font-size: 14px;
+        }
+        
+        .required {
+          color: rgba(183, 28, 28, 1.0);
+          margin-right: 15px;
+        }
+      }
+
+      .section-container {
+        margin-bottom: 40px;
+
+        .section-header {
+          display: flex;
+          align-items: center;
+          margin-bottom: 10px;
+          
+          mat-icon {
+            margin-right: 10px;
+          }
+
+          h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin: 0;
+          }
+        }
+
+        mat-divider {
+          margin-bottom: 20px;
+        }
+
+        .form-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+          gap: 20px;
+          
+          .form-container {
+            width: 100%;
+            
+            .field-label {
+              font-size: 14px;
+              margin-bottom: 5px;
+              display: block;
+            }
+
+            .required {
+              color: rgba(183, 28, 28, 1.0);
+            }
+
+            mat-form-field {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Media queries for responsive design
+@media (max-width: 768px) {
+  .account-info .midsection {
+    padding: 15px;
+    
+    .content-card {
+      padding: 15px;
+      
+      .form-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .account-info .midsection {
+    .content-card .form-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
