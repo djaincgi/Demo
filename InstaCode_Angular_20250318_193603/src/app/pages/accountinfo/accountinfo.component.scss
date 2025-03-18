@@ -1,0 +1,232 @@
+@use '@angular/material' as mat;
+
+.account-info-container {
+  font-family: 'Noto Sans', sans-serif;
+  padding: 20px;
+  
+  .breadcrumb {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 14px;
+    
+    .home-icon {
+      width: 31px;
+      height: 16px;
+      background-color: #27509B;
+      border-radius: 3px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
+      mat-icon {
+        color: white;
+        font-size: 16px;
+        width: 16px;
+        height: 16px;
+      }
+    }
+    
+    span {
+      margin: 0 5px;
+      
+      &.active {
+        color: #27509B;
+        font-weight: 700;
+      }
+    }
+    
+    mat-icon {
+      color: #27509B;
+      font-size: 14px;
+      width: 14px;
+      height: 14px;
+    }
+  }
+  
+  .page-title {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+  
+  .tabs-container {
+    display: flex;
+    margin-bottom: 15px;
+    
+    button {
+      font-size: 14px;
+      font-weight: 400;
+      margin-right: 15px;
+      
+      &.active-tab {
+        background-color: #D4E7FA;
+        border-radius: 10px 10px 0 0;
+        color: #27509B;
+        padding: 0 12px;
+      }
+    }
+  }
+  
+  .content-card {
+    padding: 20px;
+    border-radius: 0;
+    box-shadow: none;
+    
+    .section-title {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 30px;
+    }
+    
+    .form-row {
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+      gap: 20px;
+    }
+    
+    .form-group {
+      flex: 1 1 300px;
+      max-width: 328px;
+      margin-bottom: 20px;
+    }
+    
+    .field-label {
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+    
+    .required {
+      color: #B71C1C;
+      margin-left: 5px;
+    }
+    
+    .toggle-group {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+    
+    .action-buttons {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 30px;
+      gap: 15px;
+      
+      button {
+        height: 48px;
+        border-radius: 7px;
+        font-size: 16px;
+        font-weight: 500;
+      }
+      
+      .view-fleets-btn {
+        background-color: #FCE500;
+        color: #000;
+        
+        mat-icon {
+          margin-right: 10px;
+        }
+      }
+      
+      .edit-selection-btn, .save-btn {
+        background-color: #27509B;
+        color: white;
+        
+        mat-icon {
+          margin-right: 10px;
+        }
+      }
+    }
+    
+    .section-container {
+      margin-bottom: 30px;
+      
+      .section-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        
+        mat-icon {
+          margin-right: 10px;
+        }
+        
+        .section-subtitle {
+          font-size: 18px;
+          font-weight: 700;
+          margin: 0;
+        }
+      }
+      
+      mat-divider {
+        margin-bottom: 20px;
+        background-color: rgba(160, 160, 160, 1.0);
+      }
+    }
+  }
+}
+
+::ng-deep {
+  .mat-form-field-appearance-outline .mat-form-field-wrapper {
+    margin: 0;
+  }
+  
+  .mat-form-field-appearance-outline .mat-form-field-flex {
+    height: 48px;
+    align-items: center;
+  }
+  
+  .mat-form-field-appearance-outline .mat-form-field-infix {
+    padding: 0;
+    border-top: 0;
+  }
+  
+  .mat-form-field-appearance-outline .mat-form-field-outline {
+    color: black;
+  }
+  
+  .mat-form-field-appearance-outline input {
+    font-size: 14px;
+    font-weight: 300;
+  }
+}
+
+/* Media Queries for Responsive Design */
+@media screen and (max-width: 768px) {
+  .account-info-container {
+    padding: 10px;
+    
+    .form-row {
+      flex-direction: column;
+      gap: 10px;
+    }
+    
+    .form-group {
+      max-width: 100%;
+    }
+    
+    .action-buttons {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .account-info-container {
+    .form-group {
+      flex: 1 1 45%;
+    }
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .account-info-container {
+    .form-container {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}

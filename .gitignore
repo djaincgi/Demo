@@ -1,0 +1,7 @@
+.DS_Store
+.env
+InstaCode_Angular_20250318_193603/.env
+InstaCode_Angular_20250318_193603/build/
+InstaCode_Angular_20250318_193603/node_modules/
+build/
+node_modules/
