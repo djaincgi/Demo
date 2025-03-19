@@ -1,0 +1,237 @@
+@use '@angular/material' as mat;
+
+.customer-setup-container {
+  font-family: 'Noto Sans', sans-serif;
+  padding: 20px;
+  background-color: #f5f5f5;
+
+  .breadcrumb {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 14px;
+
+    .home-icon {
+      width: 31px;
+      height: 16px;
+      background-color: #27509B;
+      border-radius: 3px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: 10px;
+      
+      mat-icon {
+        color: white;
+        font-size: 16px;
+        height: 16px;
+        width: 16px;
+      }
+    }
+
+    .breadcrumb-item {
+      margin: 0 5px;
+      font-weight: 500;
+      
+      &.active {
+        color: #27509B;
+        font-weight: 700;
+      }
+    }
+
+    mat-icon {
+      color: #27509B;
+      height: 14px;
+      width: 14px;
+      font-size: 14px;
+    }
+  }
+
+  .page-title {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+
+  .tabs-container {
+    margin-bottom: 10px;
+
+    ::ng-deep .mat-tab-label-active {
+      background-color: #D4E7FA;
+      border-radius: 10px 10px 0 0;
+    }
+
+    ::ng-deep .mat-tab-label {
+      height: 26px;
+      padding: 0 24px;
+    }
+  }
+
+  .content-card {
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 0;
+
+    .section-title {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .section {
+      margin-bottom: 30px;
+
+      .section-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+
+        mat-icon {
+          margin-right: 8px;
+        }
+
+        .subsection-title {
+          font-size: 18px;
+          font-weight: 700;
+          margin: 0;
+        }
+      }
+
+      mat-divider {
+        margin-bottom: 20px;
+      }
+    }
+
+    .form-container {
+      .form-row {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 20px;
+        gap: 20px;
+
+        &.toggle-row {
+          align-items: center;
+        }
+
+        .form-field {
+          flex: 1 1 300px;
+          max-width: 328px;
+          margin-bottom: 10px;
+
+          .field-label {
+            display: block;
+            font-size: 14px;
+            margin-bottom: 10px;
+          }
+
+          .required {
+            color: #B71C1C;
+          }
+
+          mat-form-field {
+            width: 100%;
+          }
+        }
+
+        .toggle-field {
+          display: flex;
+          align-items: center;
+          margin-right: 30px;
+
+          .field-label {
+            margin-right: 10px;
+            font-size: 14px;
+          }
+        }
+      }
+    }
+
+    .update-info {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 20px;
+      font-size: 14px;
+
+      .update-text {
+        margin-right: 20px;
+      }
+    }
+  }
+
+  .action-buttons {
+    display: flex;
+    justify-content: flex-end;
+
+    button {
+      background-color: #27509B;
+      color: white;
+      padding: 0 20px;
+      height: 48px;
+      border-radius: 7px;
+
+      mat-icon {
+        margin-right: 5px;
+      }
+    }
+  }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .customer-setup-container {
+    .content-card {
+      .form-container {
+        .form-row {
+          flex-direction: column;
+          
+          .form-field {
+            max-width: 100%;
+          }
+
+          .toggle-field {
+            margin-bottom: 10px;
+          }
+        }
+      }
+
+      .update-info {
+        flex-direction: column;
+        
+        .update-text {
+          margin-right: 0;
+          margin-bottom: 5px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .customer-setup-container {
+    padding: 10px;
+    
+    .breadcrumb {
+      font-size: 12px;
+    }
+
+    .page-title {
+      font-size: 28px;
+    }
+
+    .content-card {
+      padding: 15px;
+      
+      .section-title {
+        font-size: 24px;
+      }
+
+      .section .subsection-title {
+        font-size: 16px;
+      }
+    }
+
+    .action-buttons button {
+      width: 100%;
+    }
+  }
+}

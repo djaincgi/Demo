@@ -1,0 +1,260 @@
+<!-- Main container for the account information section -->
+<div class="account-info-container">
+  <!-- Navigation breadcrumb container -->
+  <div class="breadcrumb-nav">
+    <!-- Home button with icon in the breadcrumb -->
+    <button mat-button>
+      <!-- Home icon for navigation -->
+      <mat-icon>home</mat-icon>
+      Customer
+    </button>
+    <!-- Right chevron separator icon -->
+    <mat-icon>chevron_right</mat-icon>
+    <!-- Active button showing current page in breadcrumb -->
+    <button mat-button color="primary" class="active">
+      Customer Setup
+    </button>
+  </div>
+
+  <!-- Main page title heading -->
+  <h1 class="page-title">Customer Setup</h1>
+
+  <!-- Container for navigation tabs -->
+  <div class="tabs-container">
+    <!-- Tab button for Information section -->
+    <button mat-button>Information</button>
+    <!-- Tab button for CAM Specs section -->
+    <button mat-button>CAM Specs</button>
+    <!-- Tab button for Settings section -->
+    <button mat-button>Settings</button>
+    <!-- Currently active tab for National Account Info -->
+    <button mat-button class="active-tab">National Account Info</button>
+    <!-- Tab button for Associate Dealer Customers section -->
+    <button mat-button>Associate Dealer Customers</button>
+  </div>
+
+  <!-- Main card component containing form content -->
+  <mat-card class="main-card">
+    <!-- Card title for the National Account info section -->
+    <mat-card-title>National Account info</mat-card-title>
+
+    <!-- Container for the toggle switch -->
+    <div class="toggle-container">
+      <!-- Label for the toggle field -->
+      <div class="field-label">Is National Account</div>
+      <!-- Mandatory field indicator (asterisk) -->
+      <span class="mandatory">*</span>
+      <!-- Toggle switch control, currently checked/enabled -->
+      <mat-slide-toggle color="primary" checked></mat-slide-toggle>
+    </div>
+
+    <!-- Container for action buttons -->
+    <div class="action-buttons">
+      <!-- Button to view fleets with visibility icon -->
+      <button mat-raised-button color="accent" class="view-fleets-btn">
+        <!-- Eye icon for view action -->
+        <mat-icon>visibility</mat-icon>
+        View FLeets
+      </button>
+      <!-- Button to edit selection with settings icon -->
+      <button mat-raised-button color="primary" class="edit-selection-btn">
+        <!-- Settings/gear icon -->
+        <mat-icon>settings</mat-icon>
+        Edit Selection
+      </button>
+      <!-- Button to save changes with save icon -->
+      <button mat-raised-button color="primary" class="save-btn">
+        <!-- Save/disk icon -->
+        <mat-icon>save</mat-icon>
+        Save
+      </button>
+    </div>
+
+    <!-- Section container for Fleet Information -->
+    <div class="section">
+      <!-- Header for the Fleet Information section -->
+      <div class="section-header">
+        <!-- Folder icon for the section -->
+        <mat-icon>folder</mat-icon>
+        <!-- Section title -->
+        <h2>Fleet Information</h2>
+      </div>
+      <!-- Horizontal divider line -->
+      <mat-divider></mat-divider>
+
+      <!-- Container for the form fields -->
+      <div class="form-container">
+        <!-- First row of form fields -->
+        <div class="form-row">
+          <!-- Form group for Fleet field -->
+          <div class="form-group">
+            <!-- Label for Fleet field with mandatory indicator -->
+            <div class="field-label">Fleet <span class="mandatory">*</span></div>
+            <!-- Material form field with outline appearance -->
+            <mat-form-field appearance="outline">
+              <!-- Input field with placeholder text -->
+              <input matInput placeholder="Please enter fleet here">
+            </mat-form-field>
+          </div>
+          
+          <!-- Form group for Fleet Name field -->
+          <div class="form-group">
+            <!-- Label for Fleet Name field -->
+            <div class="field-label">Fleet Name</div>
+            <!-- Material form field with outline appearance -->
+            <mat-form-field appearance="outline">
+              <!-- Input field with placeholder text -->
+              <input matInput placeholder="Please enter fleet name here">
+            </mat-form-field>
+          </div>
+          
+          <!-- Form group for Address field -->
+          <div class="form-group">
+            <!-- Label for Address field -->
+            <div class="field-label">Address</div>
+            <!-- Material form field with outline appearance -->
+            <mat-form-field appearance="outline">
+              <!-- Input field with placeholder text -->
+              <input matInput placeholder="Please enter address here">
+            </mat-form-field>
+          </div>
+          
+          <!-- Form group for City field -->
+          <div class="form-group">
+            <!-- Label for City field -->
+            <div class="field-label">City</div>
+            <!-- Material form field with outline appearance -->
+            <mat-form-field appearance="outline">
+              <!-- Input field with placeholder text -->
+              <input matInput placeholder="Please enter city here">
+            </mat-form-field>
+          </div>
+        </div>
+
+        <!-- Second row of form fields -->
+        <div class="form-row">
+          <!-- Form group for State field -->
+          <div class="form-group">
+            <!-- Label for State field -->
+            <div class="field-label">State</div>
+            <!-- Material form field with outline appearance -->
+            <mat-form-field appearance="outline">
+              <!-- Input field with placeholder text -->
+              <input matInput placeholder="Please enter state here">
+            </mat-form-field>
+          </div>
+          
+          <!-- Form group for Ship-to-number field -->
+          <div class="form-group">
+            <!-- Label for Ship-to-number field -->
+            <div class="field-label">Ship-to-number</div>
+            <!-- Material form field with outline appearance -->
+            <mat-form-field appearance="outline">
+              <!-- Input field with placeholder text -->
+              <input matInput placeholder="Please enter Ship-to -number here">
+            </mat-form-field>
+          </div>
+          
+          <!-- Form group for Bill-to-number field -->
+          <div class="form-group">
+            <!-- Label for Bill-to-number field -->
+            <div class="field-label">Bill-to-number</div>
+            <!-- Material form field with outline appearance -->
+            <mat-form-field appearance="outline">
+              <!-- Input field with placeholder text -->
+              <input matInput placeholder="Please enter Bill-to-number here">
+            </mat-form-field>
+          </div>
+          
+          <!-- Form group for DBA Name field -->
+          <div class="form-group">
+            <!-- Label for DBA Name field -->
+            <div class="field-label">DBA Name</div>
+            <!-- Material form field with outline appearance -->
+            <mat-form-field appearance="outline">
+              <!-- Input field with placeholder text -->
+              <input matInput placeholder="Please enter DBA Name here">
+            </mat-form-field>
+          </div>
+        </div>
+
+        <!-- Third row of form fields -->
+        <div class="form-row">
+          <!-- Form group for Home Office Number field -->
+          <div class="form-group">
+            <!-- Label for Home Office Number field -->
+            <div class="field-label">Home Office Number</div>
+            <!-- Material form field with outline appearance -->
+            <mat-form-field appearance="outline">
+              <!-- Input field with placeholder text -->
+              <input matInput placeholder="Please enter home office no here">
+            </mat-form-field>
+          </div>
+          
+          <!-- Form group for Fleet Home Office Name field -->
+          <div class="form-group">
+            <!-- Label for Fleet Home Office Name field -->
+            <div class="field-label">Fleet Home Office Name</div>
+            <!-- Material form field with outline appearance -->
+            <mat-form-field appearance="outline">
+              <!-- Input field with placeholder text -->
+              <input matInput placeholder="Please enter fleet home office name here">
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section container for Parent Company Information -->
+    <div class="section">
+      <!-- Header for the Parent Company Information section -->
+      <div class="section-header">
+        <!-- Folder icon for the section -->
+        <mat-icon>folder</mat-icon>
+        <!-- Section title -->
+        <h2>Parent Company Information</h2>
+      </div>
+      <!-- Horizontal divider line -->
+      <mat-divider></mat-divider>
+
+      <!-- Container for the form fields -->
+      <div class="form-container">
+        <!-- Row of form fields -->
+        <div class="form-row">
+          <!-- Form group for Parent Company Number field -->
+          <div class="form-group">
+            <!-- Label for Parent Company Number field -->
+            <div class="field-label">Parent Company Number</div>
+            <!-- Material form field with outline appearance -->
+            <mat-form-field appearance="outline">
+              <!-- Input field with placeholder text -->
+              <input matInput placeholder="Please enter parent company no here">
+            </mat-form-field>
+          </div>
+          
+          <!-- Form group for Parent Company Name field -->
+          <div class="form-group">
+            <!-- Label for Parent Company Name field -->
+            <div class="field-label">Parent Company Name</div>
+            <!-- Material form field with outline appearance -->
+            <mat-form-field appearance="outline">
+              <!-- Input field with placeholder text -->
+              <input matInput placeholder="Please enter parent company name here">
+            </mat-form-field>
+          </div>
+          
+          <!-- Form group for Category field -->
+          <div class="form-group">
+            <!-- Label for Category field -->
+            <div class="field-label">Category</div>
+            <!-- Material form field with outline appearance -->
+            <mat-form-field appearance="outline">
+              <!-- Input field with placeholder text -->
+              <input matInput placeholder="Please enter category here">
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+    </div>
+  </mat-card>
+</div>

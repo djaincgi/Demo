@@ -1,0 +1,227 @@
+<div class="customer-setup-container">
+  <div class="breadcrumb">
+    <div class="home-icon">
+      <mat-icon>home</mat-icon>
+    </div>
+    <span class="breadcrumb-item">Customer</span>
+    <mat-icon>chevron_right</mat-icon>
+    <span class="breadcrumb-item active">Customer Setup</span>
+    <mat-icon>chevron_right</mat-icon>
+  </div>
+
+  <h1 class="page-title">Customer Setup</h1>
+
+  <div class="tabs-container">
+    <mat-tab-group>
+      <mat-tab label="Information" class="active-tab"></mat-tab>
+      <mat-tab label="CAM Specs"></mat-tab>
+      <mat-tab label="Settings"></mat-tab>
+    </mat-tab-group>
+  </div>
+
+  <form [formGroup]="customerForm">
+    <mat-card class="content-card">
+      <h2 class="section-title">Information</h2>
+
+      <div class="section">
+        <div class="section-header">
+          <mat-icon>folder</mat-icon>
+          <h3 class="subsection-title">Generic Information</h3>
+        </div>
+        <mat-divider></mat-divider>
+
+        <div class="form-container">
+          <div class="form-row">
+            <div class="form-field">
+              <label class="field-label">Customer code <span class="required">*</span></label>
+              <mat-form-field appearance="outline">
+                <input matInput placeholder="Please enter customer code here">
+              </mat-form-field>
+            </div>
+
+            <div class="form-field">
+              <label class="field-label">Customer Name <span class="required">*</span></label>
+              <mat-form-field appearance="outline">
+                <input matInput placeholder="Please enter customer name here">
+              </mat-form-field>
+            </div>
+
+            <div class="form-field">
+              <label class="field-label">Type <span class="required">*</span></label>
+              <mat-form-field appearance="outline">
+                <mat-select placeholder="Please select type" formControlName="type">
+                  <mat-option value="">Please select type</mat-option>
+                  <mat-option *ngFor="let option of getDropdownOptions('type')" [value]="option">
+                    {{option}}
+                  </mat-option>
+                </mat-select>
+                <mat-error *ngIf="isFieldValid('type')">
+                  {{getErrorMessage('type')}}
+                </mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+
+          <div class="form-row toggle-row">
+            <div class="toggle-field">
+              <label class="field-label">Active <span class="required">*</span></label>
+              <mat-slide-toggle color="primary"></mat-slide-toggle>
+            </div>
+
+            <div class="toggle-field">
+              <label class="field-label">BTM Flag</label>
+              <mat-slide-toggle color="primary"></mat-slide-toggle>
+            </div>
+
+            <div class="toggle-field">
+              <label class="field-label">RFID Flag</label>
+              <mat-slide-toggle color="primary"></mat-slide-toggle>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-header">
+          <mat-icon>folder</mat-icon>
+          <h3 class="subsection-title">Geographic Information</h3>
+        </div>
+        <mat-divider></mat-divider>
+
+        <div class="form-container">
+          <div class="form-row">
+            <div class="form-field">
+              <label class="field-label">Address 1</label>
+              <mat-form-field appearance="outline">
+                <input matInput placeholder="Please enter address 1 here">
+              </mat-form-field>
+            </div>
+
+            <div class="form-field">
+              <label class="field-label">Address 2</label>
+              <mat-form-field appearance="outline">
+                <input matInput placeholder="Please enter address 2 here">
+              </mat-form-field>
+            </div>
+
+            <div class="form-field">
+              <label class="field-label">City</label>
+              <mat-form-field appearance="outline">
+                <input matInput placeholder="Please enter city here">
+              </mat-form-field>
+            </div>
+
+            <div class="form-field">
+              <label class="field-label">State / Province</label>
+              <mat-form-field appearance="outline">
+                <input matInput placeholder="Please enter state/province here">
+              </mat-form-field>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-field">
+              <label class="field-label">Postal Code</label>
+              <mat-form-field appearance="outline">
+                <input matInput placeholder="Please enter postal code">
+              </mat-form-field>
+            </div>
+
+            <div class="form-field">
+              <label class="field-label">Country <span class="required">*</span></label>
+              <mat-form-field appearance="outline">
+                <mat-select placeholder="Please select your country" formControlName="country">
+                  <mat-option value="">Please select your country</mat-option>
+                  <mat-option *ngFor="let option of getDropdownOptions('country')" [value]="option">
+                    {{option}}
+                  </mat-option>
+                </mat-select>
+                <mat-error *ngIf="isFieldValid('country')">
+                  {{getErrorMessage('country')}}
+                </mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-header">
+          <mat-icon>folder</mat-icon>
+          <h3 class="subsection-title">Sales &amp; Contact Information</h3>
+        </div>
+        <mat-divider></mat-divider>
+
+        <div class="form-container">
+          <div class="form-row">
+            <div class="form-field">
+              <label class="field-label">Contact</label>
+              <mat-form-field appearance="outline">
+                <input matInput placeholder="Please enter contact here" formControlName="contact">
+                <mat-error *ngIf="isFieldValid('contact')">
+                  {{getErrorMessage('contact')}}
+                </mat-error>
+              </mat-form-field>
+            </div>
+
+            <div class="form-field">
+              <label class="field-label">Email Address</label>
+              <mat-form-field appearance="outline">
+                <input matInput placeholder="Please enter email here">
+              </mat-form-field>
+            </div>
+
+            <div class="form-field">
+              <label class="field-label">Phone Number</label>
+              <mat-form-field appearance="outline">
+                <input matInput placeholder="Please enter phone no here">
+              </mat-form-field>
+            </div>
+
+            <div class="form-field">
+              <label class="field-label">Fax Number</label>
+              <mat-form-field appearance="outline">
+                <input matInput placeholder="Please enter fax no here">
+              </mat-form-field>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-field">
+              <label class="field-label">Sales Id</label>
+              <mat-form-field appearance="outline">
+                <input matInput placeholder="Please enter sales id here">
+              </mat-form-field>
+            </div>
+
+            <div class="form-field">
+              <label class="field-label">Route Id</label>
+              <mat-form-field appearance="outline">
+                <input matInput placeholder="Please enter Route Id here">
+              </mat-form-field>
+            </div>
+
+            <div class="form-field">
+              <label class="field-label">Enterprise Id</label>
+              <mat-form-field appearance="outline">
+                <input matInput placeholder="Please enter enterprise id here">
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="update-info">
+        <span class="update-text">Last updated: CCYY/MM/DD at 08:00 EST by BTN UserID</span>
+        <span class="create-text">Created: CCYY/MM/DD at 14:00 EST by BTNUserID</span>
+      </div>
+    </mat-card>
+
+    <div class="action-buttons">
+      <button mat-raised-button color="primary">
+        <mat-icon>save</mat-icon>
+        Save
+      </button>
+    </div>
+  </form>
+</div>
