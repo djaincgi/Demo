@@ -1,0 +1,231 @@
+@use '@angular/material' as mat;
+
+.customer-container {
+  padding: 20px;
+  font-family: 'Noto Sans', sans-serif;
+  max-width: 1600px;
+  margin: 0 auto;
+  background-color: #f5f5f5;
+
+  .breadcrumb {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 14px;
+
+    span {
+      margin: 0 5px;
+    }
+
+    .active-link {
+      color: #27509B;
+      font-weight: 700;
+    }
+
+    .home-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 31px;
+      height: 16px;
+      background-color: #27509B;
+      border-radius: 3px;
+      margin-right: 10px;
+
+      mat-icon {
+        color: white;
+        font-size: 16px;
+        height: 16px;
+        width: 16px;
+      }
+    }
+
+    mat-icon {
+      color: #27509B;
+      font-size: 14px;
+      height: 14px;
+      width: 14px;
+    }
+  }
+
+  .page-title {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+
+  .tabs {
+    display: flex;
+    margin-bottom: 10px;
+
+    .tab-button {
+      border-radius: 10px 10px 0 0;
+      padding: 0 20px;
+      font-size: 14px;
+      line-height: 20px;
+      height: 26px;
+      margin-right: 10px;
+      
+      &.active {
+        background-color: #d4e7fa;
+      }
+    }
+  }
+
+  .main-card {
+    padding: 20px;
+    border-radius: 0;
+
+    .section-title {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .section {
+      margin-bottom: 20px;
+      padding: 10px 0;
+
+      .section-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+
+        .section-icon {
+          margin-right: 10px;
+        }
+
+        h3 {
+          font-size: 18px;
+          font-weight: 700;
+          margin: 0;
+        }
+      }
+    }
+
+    .form-container {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      .form-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+
+        &.toggles {
+          align-items: center;
+          margin-top: 10px;
+        }
+      }
+
+      .form-field {
+        flex: 1;
+        min-width: 300px;
+        margin-bottom: 10px;
+
+        mat-form-field {
+          width: 100%;
+        }
+      }
+
+      .toggle-field {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-right: 30px;
+      }
+
+      .field-label {
+        display: block;
+        margin-bottom: 10px;
+        font-size: 14px;
+        font-weight: 400;
+      }
+
+      .required {
+        color: #b71c1c;
+      }
+    }
+  }
+
+  .action-buttons {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: -60px;
+    margin-right: 20px;
+    position: relative;
+    z-index: 1;
+
+    .save-button {
+      background-color: #27509B;
+      color: white;
+      padding: 0 20px;
+      height: 48px;
+      border-radius: 7px;
+      font-size: 16px;
+      font-weight: 500;
+
+      mat-icon {
+        margin-right: 5px;
+      }
+    }
+  }
+
+  .footer {
+    margin-top: 40px;
+
+    .metadata {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      font-size: 14px;
+    }
+  }
+}
+
+/* Media queries for responsive design */
+@media (max-width: 768px) {
+  .customer-container {
+    padding: 10px;
+
+    .form-container {
+      .form-row {
+        flex-direction: column;
+
+        .form-field {
+          min-width: 100%;
+        }
+      }
+
+      .toggle-field {
+        margin-bottom: 15px;
+      }
+    }
+
+    .action-buttons {
+      margin-top: 20px;
+      justify-content: center;
+    }
+
+    .footer {
+      .metadata {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
+    }
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .customer-container {
+    .form-container {
+      .form-row {
+        .form-field {
+          min-width: 45%;
+        }
+      }
+    }
+  }
+}
