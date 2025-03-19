@@ -1,0 +1,225 @@
+@use '@angular/material' as mat;
+
+.account-info-container {
+  font-family: 'Noto Sans', sans-serif;
+  margin: 35px 40px;
+  
+  .breadcrumb {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+    
+    .home-icon {
+      width: 31px;
+      height: 16px;
+      background-color: rgba(39, 80, 155, 1);
+      border-radius: 3px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+      mat-icon {
+        color: white;
+        font-size: 16px;
+        height: 16px;
+        width: 16px;
+      }
+    }
+    
+    span {
+      font-size: 14px;
+      margin: 0 5px;
+    }
+    
+    .active {
+      color: rgba(39, 80, 155, 1);
+      font-weight: 700;
+    }
+    
+    mat-icon {
+      color: rgba(39, 80, 155, 1);
+      font-size: 14px;
+      height: 14px;
+      width: 14px;
+    }
+  }
+  
+  .page-title {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 30px;
+  }
+  
+  .tabs-container {
+    display: flex;
+    margin-bottom: 15px;
+    
+    button {
+      font-size: 14px;
+      margin-right: 15px;
+      padding: 0 12px;
+      min-width: auto;
+      
+      &.active-tab {
+        background-color: rgba(212, 231, 250, 1);
+        color: rgba(39, 80, 155, 1);
+        border-radius: 10px 10px 0 0;
+      }
+    }
+  }
+  
+  .main-content {
+    padding: 20px;
+    border-radius: 0;
+    
+    .section-title {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 30px;
+    }
+    
+    .form-actions {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 30px;
+      gap: 20px;
+      
+      button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 48px;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: 500;
+        
+        mat-icon {
+          margin-right: 8px;
+        }
+      }
+      
+      .view-fleets-btn {
+        background-color: rgba(252, 229, 0, 1);
+        color: black;
+      }
+      
+      .edit-selection-btn, .save-btn {
+        background-color: rgba(39, 80, 155, 1);
+        color: white;
+      }
+    }
+    
+    .toggle-section {
+      display: flex;
+      align-items: center;
+      margin-bottom: 30px;
+      
+      .field-label {
+        margin-right: 15px;
+        font-size: 14px;
+      }
+      
+      .mandatory {
+        color: rgba(183, 28, 28, 1);
+        margin-left: 5px;
+      }
+    }
+    
+    .subsection-title {
+      display: flex;
+      align-items: center;
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      
+      mat-icon {
+        margin-right: 8px;
+      }
+    }
+    
+    mat-divider {
+      margin-bottom: 20px;
+      background-color: rgba(160, 160, 160, 1);
+    }
+    
+    .form-container {
+      margin-bottom: 30px;
+      
+      .form-field-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        margin-bottom: 20px;
+        
+        .form-field-col {
+          flex: 1;
+          min-width: 300px;
+          
+          .field-label {
+            font-size: 14px;
+            margin-bottom: 10px;
+          }
+          
+          .mandatory {
+            color: rgba(183, 28, 28, 1);
+          }
+          
+          mat-form-field {
+            width: 100%;
+            
+            ::ng-deep .mat-mdc-form-field-subscript-wrapper {
+              display: none;
+            }
+            
+            ::ng-deep .mat-mdc-text-field-wrapper {
+              background-color: white;
+              border-radius: 8px;
+            }
+            
+            ::ng-deep .mat-mdc-form-field-flex {
+              height: 48px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Media queries for responsive design
+@media (max-width: 768px) {
+  .account-info-container {
+    margin: 20px;
+    
+    .form-actions {
+      flex-direction: column;
+      align-items: stretch;
+    }
+    
+    .form-container .form-field-row .form-field-col {
+      min-width: 100%;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .account-info-container {
+    margin: 10px;
+    
+    .page-title {
+      font-size: 28px;
+    }
+    
+    .main-content .section-title {
+      font-size: 24px;
+    }
+    
+    .tabs-container {
+      flex-wrap: wrap;
+      
+      button {
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
