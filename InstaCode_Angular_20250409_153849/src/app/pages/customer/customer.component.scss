@@ -1,0 +1,221 @@
+@use '@angular/material' as mat;
+
+.customer {
+  background: rgba(245, 245, 245, 1.0);
+  font-family: 'Noto Sans', sans-serif;
+  padding: 20px;
+  
+  .midsection {
+    position: relative;
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+  }
+  
+  .breadcrumb {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    
+    &-text {
+      font-size: 14px;
+      font-weight: 500;
+      color: rgba(0, 0, 0, 1.0);
+    }
+    
+    &-text-active {
+      font-size: 14px;
+      font-weight: 700;
+      color: rgba(39, 80, 155, 1.0);
+    }
+    
+    .home-icon {
+      background-color: rgba(39, 80, 155, 1.0);
+      border-radius: 3px;
+      width: 31px;
+      height: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
+      mat-icon {
+        color: white;
+        font-size: 16px;
+        height: 16px;
+        width: 16px;
+      }
+    }
+    
+    .arrow-icon {
+      color: rgba(39, 80, 155, 1.0);
+      margin: 0 5px;
+    }
+  }
+  
+  .page-title {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+  
+  ::ng-deep .mat-mdc-tab-group {
+    margin-bottom: 20px;
+    
+    .mat-mdc-tab:first-child {
+      background-color: rgba(212, 231, 250, 1.0);
+      border-radius: 10px 10px 0 0;
+    }
+  }
+  
+  .main-card {
+    background-color: white;
+    border-radius: 4px;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .section-title {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+  
+  .section-header {
+    display: flex;
+    align-items: center;
+    margin: 15px 0;
+    
+    &.geographic {
+      margin-top: 30px;
+    }
+    
+    &.sales-contact {
+      margin-top: 30px;
+    }
+    
+    h3 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-left: 10px;
+      margin-bottom: 0;
+    }
+    
+    .section-icon {
+      mat-icon {
+        font-size: 16px;
+        height: 16px;
+        width: 16px;
+      }
+    }
+  }
+  
+  .form-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 10px;
+    
+    mat-form-field {
+      flex: 1;
+      min-width: 300px;
+    }
+  }
+  
+  .toggle-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin: 20px 0;
+  }
+  
+  .toggle-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    
+    .toggle-label {
+      font-size: 14px;
+      color: rgba(0, 0, 0, 1.0);
+    }
+  }
+  
+  .update-info {
+    display: flex;
+    justify-content: flex-end;
+    gap: 30px;
+    margin-top: 30px;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 1.0);
+  }
+  
+  .save-button {
+    position: absolute;
+    top: 28px;
+    right: 0;
+    background-color: rgba(39, 80, 155, 1.0);
+    color: white;
+    border-radius: 7px;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 12px 35px 12px 52px;
+    
+    mat-icon {
+      position: absolute;
+      left: 29px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+  
+  mat-divider {
+    margin: 10px 0 20px 0;
+    border-top-color: rgba(160, 160, 160, 1.0);
+  }
+}
+
+/* Media queries for responsive design */
+@media screen and (max-width: 768px) {
+  .customer {
+    padding: 10px;
+    
+    .form-row {
+      flex-direction: column;
+      
+      mat-form-field {
+        width: 100%;
+      }
+    }
+    
+    .toggle-row {
+      flex-direction: column;
+      gap: 15px;
+    }
+    
+    .update-info {
+      flex-direction: column;
+      gap: 5px;
+    }
+    
+    .save-button {
+      position: relative;
+      top: auto;
+      right: auto;
+      margin-top: 20px;
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .customer {
+    .form-row {
+      mat-form-field {
+        min-width: 250px;
+      }
+    }
+    
+    .save-button {
+      top: 10px;
+    }
+  }
+}
