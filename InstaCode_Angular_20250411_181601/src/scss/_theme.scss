@@ -1,0 +1,35 @@
+@use '@angular/material' as mat;
+@use '../../node_modules/@michelin/theme/theming.scss' as theming;
+
+$theme: mat.m2-define-light-theme(
+  (
+    color: (
+      primary: mat.m2-define-palette(theming.$mic-blue, A400, A100, A700),
+      accent: mat.m2-define-palette(theming.$mic-yellow, A400, A100, A700),
+      warn: mat.m2-define-palette(theming.$mic-red, A400, A100, A700)
+    ),
+    typography: theming.$michelin-typography,
+    density: 0
+  )
+);
+
+@include theming.design-system-theme($theme, true);
+
+$theme-ignore-duplication-warnings: true;
+@media not print {
+  .dark-mode {
+    $dark-theme: mat.m2-define-dark-theme(
+      (
+        color: (
+          primary: mat.m2-define-palette(theming.$mic-dark-blue, A100, A700, A700),
+          accent: mat.m2-define-palette(theming.$mic-yellow, A100, A400, A700),
+          warn: mat.m2-define-palette(theming.$mic-red, A100, A400, A700)
+        ),
+        typography: theming.$michelin-typography,
+        density: 0
+      )
+    );
+
+    @include theming.design-system-theme($dark-theme, false);
+  }
+}

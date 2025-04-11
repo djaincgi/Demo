@@ -1,0 +1,159 @@
+<div class="customer-container">
+  <div class="midsection">
+    <div class="breadcrumb">
+      <button mat-icon-button class="home-button">
+        <mat-icon>home</mat-icon>
+      </button>
+      <mat-icon>chevron_right</mat-icon>
+      <span class="dentacom">DentaCom</span>
+      <mat-icon>chevron_right</mat-icon>
+      <span class="claim-data-correction-breadcrumb">Claim Data Correction</span>
+    </div>
+
+    <h1 class="page-title">Claim Data Correction</h1>
+
+    <mat-card class="main-card">
+      <div class="card-content">
+        <form [formGroup]="customerForm">
+          <!-- Claim Data Section -->
+          <div class="section-header">
+            <mat-icon>description</mat-icon>
+            <h2>Claim Data</h2>
+          </div>
+
+          <mat-divider></mat-divider>
+
+          <div class="form-row">
+            <mat-form-field appearance="outline">
+              <mat-label>Insured</mat-label>
+              <input matInput placeholder="Please enter Insured code here">
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label>Customer Name</mat-label>
+              <input matInput placeholder="Please enter customer name here" required>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label>Use</mat-label>
+              <mat-select placeholder="Please select use" formControlName="use" required>
+                <mat-option value="">Please select use</mat-option>
+                <mat-option *ngFor="let option of getDropdownOptions('use')" [value]="option">
+                  {{option}}
+                </mat-option>
+              </mat-select>
+              <mat-error *ngIf="useControl?.invalid">Invalid Please select use</mat-error>
+            </mat-form-field>
+          </div>
+
+          <div class="toggles-row">
+            <div class="toggle-group">
+              <mat-label>Active</mat-label>
+              <span class="required">*</span>
+              <mat-slide-toggle color="primary"></mat-slide-toggle>
+            </div>
+            
+            <div class="toggle-group">
+              <mat-label>BTM Flag</mat-label>
+              <mat-slide-toggle color="primary"></mat-slide-toggle>
+            </div>
+            
+            <div class="toggle-group">
+              <mat-label>RFID Flag</mat-label>
+              <mat-slide-toggle color="primary"></mat-slide-toggle>
+            </div>
+          </div>
+
+          <!-- Master File/Change Data Section -->
+          <div class="section-header">
+            <mat-icon>description</mat-icon>
+            <h2>Master File/Change Data</h2>
+          </div>
+
+          <mat-divider></mat-divider>
+
+          <div class="form-row">
+            <mat-form-field appearance="outline">
+              <mat-label>Address 1</mat-label>
+              <input matInput placeholder="Please enter address 1 here">
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label>Address 2</mat-label>
+              <input matInput placeholder="Please enter address 2 here">
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label>City</mat-label>
+              <input matInput placeholder="Please enter city here">
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label>State / Province</mat-label>
+              <input matInput placeholder="Please enter state/province here">
+            </mat-form-field>
+          </div>
+
+          <div class="form-row">
+            <mat-form-field appearance="outline">
+              <mat-label>Postal Code</mat-label>
+              <input matInput placeholder="Please enter postal code" formControlName="postalCode">
+              <mat-error *ngIf="postalCodeControl?.invalid">Invalid Please enter postal code</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label>Country</mat-label>
+              <mat-select placeholder="Please select your country" required>
+                <mat-option value="">Please select your country</mat-option>
+                <mat-option value="option1">Option 1</mat-option>
+                <mat-option value="option2">Option 2</mat-option>
+                <mat-option value="option3">Option 3</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+
+          <div class="form-row">
+            <mat-form-field appearance="outline">
+              <mat-label>Lic</mat-label>
+              <input matInput placeholder="Please enter Lic here">
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label>Prior DCN</mat-label>
+              <input matInput placeholder="Please enter email here">
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label>NPI Bill</mat-label>
+              <input matInput placeholder="Please enter phone no here">
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label>Status</mat-label>
+              <input matInput placeholder="Please enter fax no here">
+            </mat-form-field>
+          </div>
+
+          <div class="form-row">
+            <mat-form-field appearance="outline">
+              <mat-label>Remarks</mat-label>
+              <input matInput placeholder="Please enter sales id here">
+            </mat-form-field>
+          </div>
+
+          <div class="footer-info">
+            <span>Last updated: CCYY/MM/DD at 08:00 EST by Cigna UserID</span>
+            <span>Created: CCYY/MM/DD at 14:00 EST by CignaUserID</span>
+          </div>
+        </form>
+      </div>
+    </mat-card>
+
+    <div class="button-container">
+      <button mat-raised-button color="primary">
+        <mat-icon>save</mat-icon>
+        Save
+      </button>
+    </div>
+  </div>
+</div>
