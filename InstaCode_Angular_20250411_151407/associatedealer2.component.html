@@ -1,0 +1,126 @@
+<div class="flex flex-col w-full">
+  <div class="p-4">
+    <mic-breadcrumb>
+      <mic-breadcrumb-link link="/" icon="home" ariaLabel="Home"></mic-breadcrumb-link>
+      <mic-breadcrumb-link link="/customer" label="Customer"></mic-breadcrumb-link>
+      <mic-breadcrumb-link link="/customer-setup" label="Customer Setup"></mic-breadcrumb-link>
+    </mic-breadcrumb>
+    
+    <h1 class="text-4xl font-bold mt-4 mb-6">Customers</h1>
+    
+    <div class="bg-white p-4 rounded">
+      <div class="flex flex-wrap items-center mb-6 gap-4">
+        <mat-form-field appearance="outline" subscriptSizing="dynamic">
+          <mat-icon matPrefix>search</mat-icon>
+          <input matInput placeholder="Search by Customer Name or Code" [formControl]="searchControl">
+        </mat-form-field>
+        
+        <div class="flex-grow"></div>
+        
+        <button mat-flat-button class="mic-btn-icon-right">
+          <span>Assign to Plants</span>
+          <mat-icon>location_on</mat-icon>
+        </button>
+        
+        <button mat-flat-button color="primary" class="mic-btn-icon-left">
+          <mat-icon>save</mat-icon>
+          <span>Save</span>
+        </button>
+      </div>
+      
+      <mic-table class="table-stripped" [config]="tableConfig" [dataSource]="dataSource">
+        <ng-container *micHeaderCellTemplate="let header; name: 'typeHeader'">
+          Type
+          <button mat-icon-button>
+            <mat-icon>arrow_drop_down</mat-icon>
+          </button>
+        </ng-container>
+        
+        <ng-container *micHeaderCellTemplate="let header; name: 'stateHeader'">
+          State/Province
+          <button mat-icon-button>
+            <mat-icon>arrow_drop_down</mat-icon>
+          </button>
+        </ng-container>
+        
+        <ng-container *micHeaderCellTemplate="let header; name: 'statusHeader'">
+          Status
+          <button mat-icon-button>
+            <mat-icon>arrow_drop_down</mat-icon>
+          </button>
+        </ng-container>
+        
+        <ng-container *micCellTemplate="let item; name: 'customerCodeCell'">
+          {{item.customerCode}}
+        </ng-container>
+        
+        <ng-container *micCellTemplate="let item; name: 'customerNameCell'">
+          {{item.customerName}}
+        </ng-container>
+        
+        <ng-container *micCellTemplate="let item; name: 'cityCell'">
+          {{item.city}}
+        </ng-container>
+        
+        <ng-container *micCellTemplate="let item; name: 'typeCell'">
+          {{item.type}}
+        </ng-container>
+        
+        <ng-container *micCellTemplate="let item; name: 'camSpecNameCell'">
+          {{item.camSpecName}}
+        </ng-container>
+        
+        <ng-container *micCellTemplate="let item; name: 'btmFlagCell'">
+          {{item.btmFlag}}
+        </ng-container>
+        
+        <ng-container *micCellTemplate="let item; name: 'stateCell'">
+          {{item.state}}
+        </ng-container>
+        
+        <ng-container *micCellTemplate="let item; name: 'statusCell'">
+          <div class="flex items-center">
+            <div class="rounded-full px-4 py-1 bg-green-100 text-green-700">
+              {{item.status}}
+            </div>
+          </div>
+        </ng-container>
+      </mic-table>
+      
+      <div class="flex items-center justify-between mt-4 p-4 border-t">
+        <div class="flex gap-2">
+          <button mat-flat-button class="mic-btn-icon-left">
+            <mat-icon>view_column</mat-icon>
+            <span>Columns</span>
+          </button>
+          
+          <button mat-flat-button color="primary" class="mic-btn-icon-left">
+            <mat-icon>file_download</mat-icon>
+            <span>Export</span>
+          </button>
+        </div>
+        
+        <div class="flex items-center">
+          <span>Items per page:</span>
+          <mat-form-field subscriptSizing="dynamic">
+            <mat-select [formControl]="pageSizeControl">
+              <mat-option value="9">9</mat-option>
+              <mat-option value="25">25</mat-option>
+              <mat-option value="50">50</mat-option>
+              <mat-option value="100">100</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <span>1 - 10 of 10</span>
+          <div class="flex">
+            <button mat-icon-button disabled>
+              <mat-icon>chevron_left</mat-icon>
+            </button>
+            <button mat-icon-button>
+              <mat-icon>chevron_right</mat-icon>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

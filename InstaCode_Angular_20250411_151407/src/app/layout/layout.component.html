@@ -1,0 +1,45 @@
+<div class="flex flex-col fill">
+  <mic-header>
+    <div class="flex flex-row items-center justify-between">
+
+      <div class="flex flex-row flex-none items-center">
+        <mic-sidebar-toggler [alwaysDisplay]="true" id="main-sidebar-toggler" type="left"></mic-sidebar-toggler>
+        <a routerLink="/">
+          <!-- <mic-logo></mic-logo> -->
+        </a>
+      </div>
+      <mic-navbar-spacer></mic-navbar-spacer>
+      <span class="title md-hidden">{{ title }}</span>
+      <mic-navbar-spacer></mic-navbar-spacer>
+      <div class="flex flex-row flex-none gap-2 items-center">
+        <mic-navbar-links>
+          <mic-navbar-link link="/contact"  label="Contact"></mic-navbar-link>
+        </mic-navbar-links>
+        <button mat-icon-button class="mic-icon-button-medium" aria-label="Set theme" (click)="setTheme()">
+          <mat-icon>{{ darkMode ? 'light_mode' : 'bedtime' }}</mat-icon>
+        </button>
+      </div>
+    </div>
+  </mic-header>
+  <mic-sidebar-container leftToggler="main-sidebar-toggler">
+    <mic-sidebar position="start">
+      <mic-sidebar-item link="/" icon="home" label="Home"></mic-sidebar-item>
+      <mic-sidebar-item link="/customer" icon="person" label="Customer"></mic-sidebar-item>
+      <mic-sidebar-spacer></mic-sidebar-spacer>
+      <mic-sidebar-item link="settings" icon="settings" label="Settings"></mic-sidebar-item>
+    </mic-sidebar>
+    <mic-main-content main>
+      <div class="flex flex-col fill justify-between" content>
+        <div class="sidebar-container-content">
+          <router-outlet></router-outlet>
+        </div>
+        <mic-footer>
+            <div class="xs-self-center"></div>
+            <div class="xs-self-center">Copyright © {{ year }}</div>
+            <div class="version xs-self-center">Version {{ version }}</div>
+        </mic-footer>
+      </div>
+    </mic-main-content>
+  </mic-sidebar-container>
+  <mic-alert-center [hideDelay]="8"></mic-alert-center>
+</div>
