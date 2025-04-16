@@ -1,0 +1,193 @@
+<div class="flex flex-col p-4">
+  <!-- Breadcrumb -->
+  <mic-breadcrumb>
+    <mic-breadcrumb-link link="/" icon="home" ariaLabel="Home"></mic-breadcrumb-link>
+    <mic-breadcrumb-link link="/customer" label="Customer"></mic-breadcrumb-link>
+    <mic-breadcrumb-link link="/customer/setup" label="Customer Setup"></mic-breadcrumb-link>
+  </mic-breadcrumb>
+
+  <!-- Title and Save button -->
+  <div class="flex flex-row justify-between items-center mt-4 mb-4">
+    <h1 class="text-4xl font-bold">Customer Setup</h1>
+    <button mat-flat-button color="primary" (click)="saveCustomer()">
+      <mat-icon>save</mat-icon>
+      Save
+    </button>
+  </div>
+
+  <!-- Tabs -->
+  <mat-tab-group mat-stretch-tabs="false" [selectedIndex]="selectedTabIndex" (selectedTabChange)="onTabChange($event)" class="mb-4">
+    <mat-tab label="Information">
+      <div class="bg-white p-4 rounded">
+        <h2 class="text-3xl font-bold mb-4">Information</h2>
+
+        <form [formGroup]="customerForm">
+          <!-- Generic Information Section -->
+          <mat-accordion>
+            <mat-expansion-panel expanded>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  <mat-icon>folder</mat-icon>
+                  <span class="ml-2 font-bold">Generic Information</span>
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <mat-divider></mat-divider>
+
+              <div class="grid grid-cols-3 gap-4 mt-4">
+                <mat-form-field appearance="outline" subscriptSizing="dynamic">
+                  <mat-label>Customer code *</mat-label>
+                  <input matInput formControlName="customerCode" placeholder="Please enter customer code here">
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" subscriptSizing="dynamic">
+                  <mat-label>Customer name *</mat-label>
+                  <input matInput formControlName="customerName" placeholder="Please enter customer name here">
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" subscriptSizing="dynamic">
+                  <mat-label>Type *</mat-label>
+                  <mat-select formControlName="type" placeholder="Please select type">
+                    <mat-option value="option1">Option 1</mat-option>
+                    <mat-option value="option2">Option 2</mat-option>
+                    <mat-option value="option3">Option 3</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+
+              <div class="flex flex-row gap-8 mt-4">
+                <div class="flex flex-row items-center gap-2">
+                  <span>Active *</span>
+                  <mat-slide-toggle formControlName="active"></mat-slide-toggle>
+                  <span>Yes</span>
+                </div>
+
+                <div class="flex flex-row items-center gap-2">
+                  <span>BTM Flag</span>
+                  <mat-slide-toggle formControlName="btmFlag"></mat-slide-toggle>
+                  <span>Yes</span>
+                </div>
+
+                <div class="flex flex-row items-center gap-2">
+                  <span>RFID Flag</span>
+                  <mat-slide-toggle formControlName="rfidFlag"></mat-slide-toggle>
+                  <span>Yes</span>
+                </div>
+              </div>
+            </mat-expansion-panel>
+          </mat-accordion>
+
+          <!-- Geographic Information Section -->
+          <mat-accordion class="mt-4">
+            <mat-expansion-panel expanded>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  <mat-icon>folder</mat-icon>
+                  <span class="ml-2 font-bold">Geographic Information</span>
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <mat-divider></mat-divider>
+
+              <div class="grid grid-cols-4 gap-4 mt-4">
+                <mat-form-field appearance="outline" subscriptSizing="dynamic">
+                  <mat-label>Address 1</mat-label>
+                  <input matInput formControlName="address1" placeholder="Please enter address 1 here">
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" subscriptSizing="dynamic">
+                  <mat-label>Address 2</mat-label>
+                  <input matInput formControlName="address2" placeholder="Please enter address 2 here">
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" subscriptSizing="dynamic">
+                  <mat-label>City</mat-label>
+                  <input matInput formControlName="city" placeholder="Please enter city here">
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" subscriptSizing="dynamic">
+                  <mat-label>State / Province</mat-label>
+                  <input matInput formControlName="stateProvince" placeholder="Please enter state/province here">
+                </mat-form-field>
+              </div>
+
+              <div class="grid grid-cols-4 gap-4 mt-4">
+                <mat-form-field appearance="outline" subscriptSizing="dynamic">
+                  <mat-label>Postal Code</mat-label>
+                  <input matInput formControlName="postalCode" placeholder="Please enter postal code">
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" subscriptSizing="dynamic">
+                  <mat-label>Country</mat-label>
+                  <mat-select formControlName="country" placeholder="Please select country type">
+                    <mat-option value="option1">Option 1</mat-option>
+                    <mat-option value="option2">Option 2</mat-option>
+                    <mat-option value="option3">Option 3</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+            </mat-expansion-panel>
+          </mat-accordion>
+
+          <!-- Sales & Contact Information Section -->
+          <mat-accordion class="mt-4">
+            <mat-expansion-panel expanded>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  <mat-icon>folder</mat-icon>
+                  <span class="ml-2 font-bold">Sales & Contact Information</span>
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <mat-divider></mat-divider>
+
+              <div class="grid grid-cols-4 gap-4 mt-4">
+                <mat-form-field appearance="outline" subscriptSizing="dynamic">
+                  <mat-label>Contact</mat-label>
+                  <input matInput formControlName="contact" placeholder="Please enter contact here">
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" subscriptSizing="dynamic">
+                  <mat-label>Email Address</mat-label>
+                  <input matInput formControlName="emailAddress" placeholder="Please enter email here">
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" subscriptSizing="dynamic">
+                  <mat-label>Phone Number</mat-label>
+                  <input matInput formControlName="phoneNumber" placeholder="Please enter phone no here">
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" subscriptSizing="dynamic">
+                  <mat-label>Fax Number</mat-label>
+                  <input matInput formControlName="faxNumber" placeholder="Please enter fax no here">
+                </mat-form-field>
+              </div>
+
+              <div class="grid grid-cols-4 gap-4 mt-4">
+                <mat-form-field appearance="outline" subscriptSizing="dynamic">
+                  <mat-label>Sales Id</mat-label>
+                  <input matInput formControlName="salesId" placeholder="Please enter sales id here">
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" subscriptSizing="dynamic">
+                  <mat-label>Route Id</mat-label>
+                  <input matInput formControlName="routeId" placeholder="Please enter Route Id here">
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" subscriptSizing="dynamic">
+                  <mat-label>Enterprise Id</mat-label>
+                  <input matInput formControlName="enterpriseId" placeholder="Please enter enterprise id here">
+                </mat-form-field>
+              </div>
+            </mat-expansion-panel>
+          </mat-accordion>
+        </form>
+
+        <!-- Footer information -->
+        <div class="flex flex-row justify-end gap-8 mt-8">
+          <span>Last updated: CCYY/MM/DD at 08:00 EST by BTN UserID</span>
+          <span>Created: CCYY/MM/DD at 14:00 EST by BTNUserID</span>
+        </div>
+      </div>
+    </mat-tab>
+    <mat-tab label="CAM Specs"></mat-tab>
+    <mat-tab label="Settings"></mat-tab>
+  </mat-tab-group>
+</div>
