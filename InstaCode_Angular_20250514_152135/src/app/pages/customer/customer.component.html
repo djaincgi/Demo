@@ -1,0 +1,176 @@
+<div class="grid grid-cols-1 gap-4">
+  <div class="bg-white p-4">
+    <mic-breadcrumb>
+      <mic-breadcrumb-link icon="home" link="/"></mic-breadcrumb-link>
+      <mic-breadcrumb-link label="Customer" link="/customer"></mic-breadcrumb-link>
+      <mic-breadcrumb-link label="Customer Setup"></mic-breadcrumb-link>
+    </mic-breadcrumb>
+
+    <h1>Customer Setup</h1>
+
+    <mat-tab-group mat-stretch-tabs="false">
+      <mat-tab label="Information"></mat-tab>
+      <mat-tab label="CAM Specs"></mat-tab>
+      <mat-tab label="Settings"></mat-tab>
+    </mat-tab-group>
+
+    <div class="bg-white p-4">
+      <h2>Information</h2>
+      
+      <div class="mb-4">
+        <h3 class="flex items-center mb-2">
+          <mat-icon>folder</mat-icon>
+          <span class="ml-4">Generic Information</span>
+        </h3>
+        <mat-divider></mat-divider>
+      </div>
+
+      <form [formGroup]="customerForm">
+        <div class="grid grid-cols-3 xs-grid-cols-1 sm-grid-cols-1 md-grid-cols-2 lg-grid-cols-3 xl-grid-cols-3 gap-4 mb-4">
+          <mat-form-field appearance="outline" subscriptSizing="dynamic">
+            <mat-label>Customer code <span class="text-red-500">*</span></mat-label>
+            <input matInput placeholder="Please enter customer code here" formControlName="customerCode">
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" subscriptSizing="dynamic">
+            <mat-label>Customer Name <span class="text-red-500">*</span></mat-label>
+            <input matInput placeholder="Please enter customer name here" formControlName="customerName">
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" subscriptSizing="dynamic">
+            <mat-label>Type <span class="text-red-500">*</span></mat-label>
+            <mat-select formControlName="customerType" placeholder="Please select type">
+              <mat-option value="option1">Option 1</mat-option>
+              <mat-option value="option2">Option 2</mat-option>
+              <mat-option value="option3">Option 3</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div class="grid grid-cols-3 xs-grid-cols-1 sm-grid-cols-1 md-grid-cols-3 lg-grid-cols-3 xl-grid-cols-3 gap-4 mb-4">
+          <div class="flex items-center">
+            <span>Active <span class="text-red-500">*</span></span>
+            <mat-slide-toggle formControlName="active" class="ml-2"></mat-slide-toggle>
+          </div>
+
+          <div class="flex items-center">
+            <span>BTM Flag</span>
+            <mat-slide-toggle formControlName="btmFlag" class="ml-2"></mat-slide-toggle>
+          </div>
+
+          <div class="flex items-center">
+            <span>RFID Flag</span>
+            <mat-slide-toggle formControlName="rfidFlag" class="ml-2"></mat-slide-toggle>
+          </div>
+        </div>
+
+        <div class="mb-4">
+          <h3 class="flex items-center mb-2">
+            <mat-icon>folder</mat-icon>
+            <span class="ml-4">Geographic Information</span>
+          </h3>
+          <mat-divider></mat-divider>
+        </div>
+
+        <div class="grid grid-cols-3 xs-grid-cols-1 sm-grid-cols-1 md-grid-cols-2 lg-grid-cols-3 xl-grid-cols-3 gap-4 mb-4">
+          <mat-form-field appearance="outline" subscriptSizing="dynamic">
+            <mat-label>Address 1</mat-label>
+            <input matInput placeholder="Please enter address 1 here" formControlName="address1">
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" subscriptSizing="dynamic">
+            <mat-label>Address 2</mat-label>
+            <input matInput placeholder="Please enter address 2 here" formControlName="address2">
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" subscriptSizing="dynamic">
+            <mat-label>City</mat-label>
+            <input matInput placeholder="Please enter city here" formControlName="city">
+          </mat-form-field>
+        </div>
+
+        <div class="grid grid-cols-3 xs-grid-cols-1 sm-grid-cols-1 md-grid-cols-2 lg-grid-cols-3 xl-grid-cols-3 gap-4 mb-4">
+          <mat-form-field appearance="outline" subscriptSizing="dynamic">
+            <mat-label>State / Province</mat-label>
+            <input matInput placeholder="Please enter state/province here" formControlName="stateProvince">
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" subscriptSizing="dynamic">
+            <mat-label>Postal Code</mat-label>
+            <input matInput placeholder="Please enter postal code" formControlName="postalCode">
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" subscriptSizing="dynamic">
+            <mat-label>Country <span class="text-red-500">*</span></mat-label>
+            <mat-select formControlName="country" placeholder="Please select your country">
+              <mat-option value="option1">Option 1</mat-option>
+              <mat-option value="option2">Option 2</mat-option>
+              <mat-option value="option3">Option 3</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div class="mb-4">
+          <h3 class="flex items-center mb-2">
+            <mat-icon>folder</mat-icon>
+            <span class="ml-4">Sales & Contact Information</span>
+          </h3>
+          <mat-divider></mat-divider>
+        </div>
+
+        <div class="grid grid-cols-3 xs-grid-cols-1 sm-grid-cols-1 md-grid-cols-2 lg-grid-cols-3 xl-grid-cols-3 gap-4 mb-4">
+          <mat-form-field appearance="outline" subscriptSizing="dynamic">
+            <mat-label>Contact</mat-label>
+            <input matInput placeholder="Please enter contact here" formControlName="contact">
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" subscriptSizing="dynamic">
+            <mat-label>Email Address</mat-label>
+            <input matInput placeholder="Please enter email here" formControlName="emailAddress">
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" subscriptSizing="dynamic">
+            <mat-label>Phone Number</mat-label>
+            <input matInput placeholder="Please enter phone no here" formControlName="phoneNumber">
+          </mat-form-field>
+        </div>
+
+        <div class="grid grid-cols-3 xs-grid-cols-1 sm-grid-cols-1 md-grid-cols-2 lg-grid-cols-3 xl-grid-cols-3 gap-4 mb-4">
+          <mat-form-field appearance="outline" subscriptSizing="dynamic">
+            <mat-label>Fax Number</mat-label>
+            <input matInput placeholder="Please enter fax no here" formControlName="faxNumber">
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" subscriptSizing="dynamic">
+            <mat-label>Sales Id</mat-label>
+            <input matInput placeholder="Please enter sales id here" formControlName="salesId">
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" subscriptSizing="dynamic">
+            <mat-label>Route Id</mat-label>
+            <input matInput placeholder="Please enter Route Id here" formControlName="routeId">
+          </mat-form-field>
+        </div>
+
+        <div class="grid grid-cols-3 xs-grid-cols-1 sm-grid-cols-1 md-grid-cols-1 lg-grid-cols-1 xl-grid-cols-1 gap-4 mb-4">
+          <mat-form-field appearance="outline" subscriptSizing="dynamic">
+            <mat-label>Enterprise Id</mat-label>
+            <input matInput placeholder="Please enter enterprise id here" formControlName="enterpriseId">
+          </mat-form-field>
+        </div>
+      </form>
+
+      <div class="text-center mb-4">
+        <p>Last updated: CCYY/MM/DD at 08:00 EST by BTN UserID</p>
+        <p>Created: CCYY/MM/DD at 14:00 EST by BTNUserID</p>
+      </div>
+    </div>
+
+    <div class="flex justify-end">
+      <button mat-flat-button color="primary" (click)="saveCustomer()">
+        <mat-icon>save</mat-icon>
+        Save
+      </button>
+    </div>
+  </div>
+</div>

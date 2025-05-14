@@ -1,0 +1,118 @@
+{
+  "Customer_Please_select_country_type": [
+    {
+      "name": "United States",
+      "id": 0
+    },
+    {
+      "name": "Canada",
+      "id": 1
+    },
+    {
+      "name": "United Kingdom",
+      "id": 2
+    },
+    {
+      "name": "Germany",
+      "id": 3
+    },
+    {
+      "name": "France",
+      "id": 4
+    }
+  ],
+  "Customer_Please_select_type": [
+    {
+      "name": "type2",
+      "id": 0
+    },
+    {
+      "name": "type1",
+      "id": 1
+    }
+  ],
+  "Customer_Please_select_your_country": [
+    {
+      "name": "United States",
+      "id": 0
+    },
+    {
+      "name": "Canada",
+      "id": 1
+    },
+    {
+      "name": "United Kingdom",
+      "id": 2
+    },
+    {
+      "name": "Germany",
+      "id": 3
+    },
+    {
+      "name": "France",
+      "id": 4
+    }
+  ],
+  "Dentacom_Please_select_type": [
+    {
+      "name": "type2",
+      "id": 0
+    },
+    {
+      "name": "type1",
+      "id": 1
+    }
+  ],
+  "Customer_Please_select_use": [
+    {
+      "name": "type2",
+      "id": 0
+    },
+    {
+      "name": "type1",
+      "id": 1
+    }
+  ],
+  "Frame6500_Please_select_Country_": [
+    {
+      "name": "type2",
+      "id": 0
+    },
+    {
+      "name": "type1",
+      "id": 1
+    }
+  ],
+  "Customer2_Please_select_type_": [
+    {
+      "name": "type2",
+      "id": 0
+    },
+    {
+      "name": "type1",
+      "id": 1
+    }
+  ],
+  "Customer2_Please_select_country_type_": [
+    {
+      "name": "United States",
+      "id": 0
+    },
+    {
+      "name": "Canada",
+      "id": 1
+    },
+    {
+      "name": "United Kingdom",
+      "id": 2
+    },
+    {
+      "name": "Germany",
+      "id": 3
+    },
+    {
+      "name": "France",
+      "id": 4
+    }
+  ]
+}
